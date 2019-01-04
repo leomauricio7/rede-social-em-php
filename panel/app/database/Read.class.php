@@ -17,11 +17,27 @@ class Read extends Conn{
         $this->Execute();
     }
 
+    public function verificaLike($user, $post) {
+        if(empty($Termos)):
+            $Termos = '';
+        endif;
+        $this->Select = "SELECT l.id, l.curtiu FROM likes AS l WHERE l.id_usuario = $user AND l.id_post = $post";
+        $this->ExecuteSQL();
+    }
+
     public function getPosts($Termos = null) {
         if(empty($Termos)):
             $Termos = '';
         endif;
         $this->Select = "SELECT p.id AS idPost, p.legenda, p.img, p.data_created AS dataPublicacao, u.nome, u.avatar FROM posts AS p INNER JOIN usuarios AS u ON p.id_usuario = u.id $Termos";
+        $this->ExecuteSQL();
+    }
+
+    public function getLike($Termos = null) {
+        if(empty($Termos)):
+            $Termos = '';
+        endif;
+        $this->Select = "SELECT COUNT(DISTINCT l.id) AS curtidas FROM likes AS l INNER JOIN posts AS p ON l.id_post = p.id AND l.curtiu = 'SIM' AND p.id=$Termos";
         $this->ExecuteSQL();
     }
 
