@@ -57,7 +57,7 @@
     foreach ($posts->getResult() as $post):
         extract($post);
 ?>
-<div class="card">
+<div class="card bg-person">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
         <img class="rounded" width="30px" src="<?php echo Url::getBase().'uplouds/users/'.$avatar ?>" alt="">
@@ -117,7 +117,7 @@
         <input type="hidden" name="ccLike" value="<?php echo $idPost ?>">
         <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['userId'] ?>">
         <input type="hidden" name="id_post" value="<?php echo $idPost ?>">
-        <button type="submit" class="badge badge-pill badge-primary float-left btn-post"><span class="badge badge-light"><?php echo $curtidas ?></span> <i class="fas fa-thumbs-up"></i> Curti</button> 
+        <button type="submit" class="btn btn-sm btn-outline-primary float-left btn-post"><span class="badge badge-light"><?php echo $curtidas ?></span> <i class="fas fa-thumbs-up"></i> Curti</button> 
     </form>
     <?php endforeach ?>
   </div>  
@@ -129,7 +129,7 @@
             extract($comentario);
     ?>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item bg-person">
         <img class="rounded" width="30px" src="<?php echo Url::getBase().'uplouds/users/'.$avatarUserComentario ?>" alt="">
         <span class="badge badge-pill badge-secondary"> <i class="fas fa-comments"></i> <?php echo $nomeUserComentario ?></span>
         <?php echo $comentario ?>

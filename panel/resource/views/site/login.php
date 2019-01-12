@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 jumbotron">
+    <div class="col-4 jumbotron bg-person">
         <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST"):
                 $valida = new Validation();
@@ -26,8 +26,8 @@
             endif;
         ?>
         <form class="form-signin text-center" method="POST">
-            <img class="mb-4" src="https://getbootstrap.com/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            <img class="mb-4" src="<?php echo Url::getBase(); ?>panel/public/img/logo.png" alt="" width="150">
+            <h1 class="h3 mb-3 font-weight-normal">Acesso Restrito</h1>
             <label for="inputEmail" class="sr-only">Email</label>
             <input type="email" class="form-control" placeholder="Email" name="login" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label><br>

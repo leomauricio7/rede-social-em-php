@@ -33,6 +33,14 @@ class Read extends Conn{
         $this->ExecuteSQL();
     }
 
+    public function getChat($Termos = null) {
+        if(empty($Termos)):
+            $Termos = '';
+        endif;
+        $this->Select = "SELECT ch.id, ch.de, us.nome AS para, ch.msg, ch.`status`, ch.created as data FROM chat AS ch  INNER JOIN usuarios AS us ON ch.para = us.id $Termos";
+        $this->ExecuteSQL();
+    }
+
     public function getLike($Termos = null) {
         if(empty($Termos)):
             $Termos = '';

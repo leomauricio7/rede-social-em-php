@@ -1,5 +1,5 @@
-<footer class="footer mt-auto py-3 bg-dark">
+<footer class="footer mt-auto py-3 bg-footer">
   <div class="container">
-    <span class="text-muted">&copy 2018 - Todos os Direitos reservados</span>
+    <span class="text-muted">&copy 2019 - Todos os Direitos reservados</span>
   </div>
 </footer>

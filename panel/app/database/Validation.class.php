@@ -124,4 +124,15 @@ class Validation extends Conn {
         $read->ExeRead('usuarios', "where id = $userId");
         return $read->getResult();
     }
+
+    public static function getNameUser($userId){
+        $name = null;
+        $read = new Read();
+        $read->ExeRead('usuarios', "where id = $userId");
+            foreach($read->getResult() as $user):
+                extract($user);
+                $name = $nome;
+            endforeach;
+        return $name;
+    }
 }

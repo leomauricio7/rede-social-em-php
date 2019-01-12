@@ -86,7 +86,7 @@
 </div>
 <?php endforeach ?>
 <hr class="mb-4"/>
-<h6>Publicações</h6>
+<h6 class="title bg-person">Suas Publicações</h6>
 <!-- feeds de publicações dos vendedores-->
 <?php
 $posts= new Read();
@@ -95,7 +95,7 @@ $posts->getPosts("WHERE u.id = $idUser ORDER BY p.id DESC");
 foreach ($posts->getResult() as $post):
     extract($post);
 ?>
-<div class="card">
+<div class="card bg-person">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             <img class="rounded" width="30px" src="<?php echo Url::getBase().'uplouds/users/'.$avatar ?>" alt="">
@@ -110,18 +110,63 @@ foreach ($posts->getResult() as $post):
 <div class="card-body">
 <p class="card-text"><?php echo $legenda ?></p>
 </div>
-<div class="card-body">
-<a class="badge badge-pill badge-primary btn-post"><span class="badge badge-light"><?php echo '0' ?></span> <i class="fas fa-thumbs-up"></i> Curti</a>
-<a class="badge badge-pill badge-primary btn-post" id="comentario"><i class="fas fa-comments"></i> Comentarios</a>
+<div class="card-body ">
+<?php 
+        $key = $idPost;
+        if ($_POST && ($_POST['typeForm'] == 'cl') && ($_POST['ccLike'] == $key)):
+            $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            $read = new Read();
+            $read->verificaLike($dados['id_usuario'], $dados['id_post']);
+            if($read->getResult()){
+             $update = new Update();
+             foreach($read->getResult() as $like):
+                extract($like);
+                if($curtiu == 'SIM'){
+                    $data = ['curtiu' => 'NAO'];
+                    $update->ExeUpdate('likes', $data, "where id= :id", "id=$id");
+                }else{
+                    $data = ['curtiu' => 'SIM'];
+                    $update->ExeUpdate('likes', $data, "where id= :id", "id=$id");
+                }
+             endforeach;
+
+            }else{
+                $dados['curtiu'] = 'SIM';
+                unset($dados['ccLike']);
+                unset($dados['typeForm']);
+                var_dump($dados);
+                $create = new Create();
+                $create->ExeCreate('likes', $dados);
+                if($create->getResult()){
+                    echo '<script>location.href="./";</script>';
+                    unset($dados);
+                }
+            }
+        endif
+    ?>
+    <?php 
+    $readLike = new Read();
+    $readLike->getLike($idPost);
+    foreach($readLike->getResult() as $likes):
+        extract($likes);
+    ?>
+    <form id="formLike" method="post">
+        <input type="hidden" name="typeForm" value="cl">
+        <input type="hidden" name="ccLike" value="<?php echo $idPost ?>">
+        <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['userId'] ?>">
+        <input type="hidden" name="id_post" value="<?php echo $idPost ?>">
+        <button type="submit" class="btn btn-sm btn-outline-primary float-left btn-post"><span class="badge badge-light"><?php echo $curtidas ?></span> <i class="fas fa-thumbs-up"></i> Curti</button> 
+    </form>
+    <?php endforeach ?>
 </div>
 <?php 
-        $comentarios = new Read();
-        $comentarios->getComentarios("WHERE p.id = $idPost ORDER BY c.id ASC");
-        foreach($comentarios->getResult() as $comentario):
-            extract($comentario);
-    ?>
+    $comentarios = new Read();
+    $comentarios->getComentarios("WHERE p.id = $idPost ORDER BY c.id ASC");
+    foreach($comentarios->getResult() as $comentario):
+        extract($comentario);
+?>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item bg-person">
         <img class="rounded" width="30px" src="<?php echo Url::getBase().'uplouds/users/'.$avatarUserComentario ?>" alt="">
         <span class="badge badge-pill badge-secondary"><?php echo $nomeUserComentario ?></span>
         <?php echo $comentario ?>

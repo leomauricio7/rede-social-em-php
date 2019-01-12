@@ -3,7 +3,7 @@
         <?php include_once 'carrousel.php' ?>
     </div>
     <div class="col-5">
-        <div class="jumbotron">
+        <div class="jumbotron bg-person">
             <h4 class="mb-3">Cadastre-se agora de forma simples e fácil</h4>
             <form action="" method="post">
                 <div class="row">
@@ -36,7 +36,7 @@
                             <input class="form-check-input" type="radio" name="sexo" value="F"  required>
                             <label class="form-check-label" for="inlineRadio2">Feminino</label>
                         </div>
-                        <small id="emailHelp" class="form-text text-muted">
+                        <small id="emailHelp" class="form-text text-muted bg-branco">
                         Ao clicar em cadastre-se, você concorda com nossos Termos, Política de Dados e Política de Cookies. Você pode receber notificações por SMS e pode cancelar isso quando quiser.
                         </small>
                     </div>
