@@ -1,2 +1,3 @@
-# rede-social-em-php
-rede social para divulgação de agricultores
+## Rede social em php
+### Desenvolvimento Leonardo Maurício
+#### Contato: leomauricio7@gmail.com
