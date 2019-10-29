@@ -1,5 +1,5 @@
 <div class="dff-tab" id="tab-4">
-<form action="" method="post" id="formUserVendedor">
+<form id="formUserVendedor" method="post" action="" >
     <div class="row">
       <div class="col-lg-12 no-pdd">
         <div class="sn-field">
