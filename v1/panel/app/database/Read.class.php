@@ -56,6 +56,11 @@ class Read extends Conn{
         $this->Select = "SELECT c.id, c.comentario, p.id AS idPost, u.nome as nomeUserComentario, u.avatar AS avatarUserComentario FROM comentarios AS c INNER JOIN  posts AS p ON c.id_post = p.id INNER JOIN usuarios AS u ON c.id_usuario = u.id $Termos";
         $this->ExecuteSQL();
     }  
+
+    public function getTotalComentariosPost($idPost) {
+        $this->Select = "SELECT * FROM comentarios WHERE id_post = $idPost";
+        $this->ExecuteSQL();
+    } 
     
     public function getResult() {
         return $this->Result;        

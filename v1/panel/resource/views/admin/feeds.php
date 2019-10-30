@@ -151,7 +151,6 @@
                 echo '<script>location.href="./";</script>';
                 unset($dados);
             }
-            
         endif
     ?>
     <form class="form-inline col-12" method="POST">

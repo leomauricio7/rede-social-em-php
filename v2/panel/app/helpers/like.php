@@ -3,7 +3,7 @@ require_once '../conf.inc';
 require_once '../../vendor/autoload.php';
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $read = new Read();
-$read->verificaLike($dados['user'], $dados['post']);
+$read->verificaLike($dados['id_usuario'], $dados['id_post']);
 if ($read->getResult()) {
   $update = new Update();
   foreach ($read->getResult() as $like) :

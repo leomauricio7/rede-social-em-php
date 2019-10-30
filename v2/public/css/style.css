@@ -271,7 +271,7 @@ nav ul li:hover > ul,
 header {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: #28441b;
 }
 .header-data {
 	float: left;
@@ -385,7 +385,7 @@ header {
 	border: 0;
 }
 .search-bar form button i {
-	color: #e44d3a;
+	color: #28441b;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -537,8 +537,8 @@ nav > ul > li > a:hover {
 .user-account {
 	float: right;
 	width: 110px;
-	border-left: 1px solid #dd3e2b;
-	border-right: 1px solid #dd3e2b;
+	border-left: 1px solid #1a2b11;
+	border-right: 1px solid #1a2b11;
 	box-sizing: border-box;
 	position: relative;
 }
@@ -682,6 +682,7 @@ nav > ul > li > a:hover {
 	-ms-border-radius: 100px;
 	-o-border-radius: 100px;
 	border-radius: 100px;
+	width: 30px;
 }
 .user-info a {
 	color: #fff;
@@ -740,7 +741,7 @@ main {
 .username-dt {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: #28441b;
 	padding-top: 40px;
 }
 .user-data {
@@ -813,7 +814,7 @@ main {
 	font-size: 20px;
 }
 .user-fw-status li a {
-	color: #e44d3a;
+	color: #28441b;
 	font-size: 14px;
 	font-weight: 600;	
 }
@@ -981,7 +982,7 @@ main {
 	width: 100%;
 	padding: 23px 20px;
 	background-color: #fff;
-	border-top: 4px solid #e44d3a;
+	border-top: 4px solid #28441b;
 	border-left: 1px solid #e4e4e4;
 	border-bottom: 1px solid #e4e4e4;
 	border-right: 1px solid #e4e4e4;
@@ -1069,6 +1070,7 @@ main {
 	-o-border-radius: 100px;
 	border-radius: 100px;
 	margin-top: 2px;
+	width: 30px;
 }
 .ed-opts {
 	float: right;
@@ -1760,6 +1762,7 @@ main {
 .widget-about img {
 	float: none;
 	padding-top: 20px;
+	width: 50px;
 }
 .widget-about h3 {
 	color: #000000;
@@ -6838,4 +6841,8 @@ ul#myTab {
     line-height: 24px;
     font-size: 14px;
     color: #666666;
+}
+
+.curtiu{
+	color: #F44336!important;
 }

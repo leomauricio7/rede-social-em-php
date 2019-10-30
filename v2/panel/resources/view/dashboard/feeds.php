@@ -49,14 +49,52 @@
                         <div class="main-ws-sec">
                             <!-- post feed -->
                             <div class="post-topbar">
-                                <div class="user-picy">
-                                    <img src="<?php echo $_SESSION['avatar'] != null ? Url::getBase() . 'uplouds/users/' . $_SESSION['avatar'] : Url::getBase() . '../public/images/user.png' ?>" alt="<?php echo $_SESSION['avatar'] ?>">
+                                <?php if($_SESSION['tipo'] != 'C'): 
+                                    if ($_POST && ($_POST['typeForm'] == 'cp')):
+                                        $addinfo = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                                        $addinfo['id_usuario'] = $_SESSION['userId'];
+                                        $addinfo['img'] = ($_FILES['img']['tmp_name'] ? $_FILES['img'] : null);
+                                        unset($addinfo['typeForm']);
+                                        $file = $_FILES['img'];
+                                        $post = new Post();
+                                        $post->CreatePost($addinfo);
+
+                                        if (!$post->getResult()):
+                                            echo $post->getMsg();
+                                        else:
+                                            $uploud = new Uploud();
+                                            $uploud->Imagem($file, 'posts/' . $post->getResult() . '/');
+                                            echo $post->getMsg();
+                                            unset($addinfo);
+                                        endif;
+                                    endif;
+                                    unset($addinfo);
+                                    if (!empty($_SESSION['msg'])):
+                                        echo $_SESSION['msg'];
+                                        unset($_SESSION['msg']);
+                                    endif;
+                                ?>
+                                <div class="post-project-fields">
+                                    <form id="formFeed" method="post" action="" enctype="multipart/form-data">
+                                        <input type="hidden" name="typeForm" value="cp">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <textarea name="legenda" placeholder="Digite a descrição da sua publicação...." rows="5" class="form-control" required></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <input type="file" name="img" class="form-control" required>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <ul>
+                                                    <li><button class="active" type="submit" value="post">Publciar</button></li>
+                                                    <li><button type="reset" title="">Cancelar</button></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 </div>
-                                <div class="post-st">
-                                    <ul>
-                                        <li><a class="post_project" href="#" title="">Publicar</a></li>
-                                    </ul>
-                                </div>
+                                <?php endif; ?>
                                 <!--post-st end-->
                             </div>
                             <!-- posts -->
@@ -67,7 +105,7 @@
                     </div>
                     <!-- notifications -->
                     <div class="col-lg-3 pd-right-none no-pd">
-                        <?php include_once('sidbar.php')?>
+                        <?php include_once('sidbar.php') ?>
                     </div>
 
                 </div>
