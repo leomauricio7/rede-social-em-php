@@ -50,8 +50,8 @@
                     <h3>Ferramentas</h3>
                     <ul class="us-links">
                         <li>
-                            <a href="" title="">
-                                <i class="fas fa-id-badge"></i> Editar Perfil
+                            <a href="<?php echo Url::getBase() ?>profile" title="">
+                                <i class="fas fa-id-badge"></i> Ver Perfil
                             </a>
                         </li>
                     </ul>

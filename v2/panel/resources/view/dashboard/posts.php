@@ -9,7 +9,7 @@ foreach ($posts->getResult() as $post) :
       <!-- header post -->
       <div class="post_topbar">
         <div class="usy-dt">
-          <img src="<?php echo $_SESSION['avatar'] != null ? Url::getBase() . 'uplouds/users/' . $avatar : Url::getBase() . '../public/images/user.png' ?>" alt="<?php echo $avatar ?>">
+          <img src="<?php echo $avatar != null ? Url::getBase() . 'uplouds/users/' . $avatar : Url::getBase() . '../public/images/user.png' ?>" alt="<?php echo $avatar ?>">
           <div class="usy-name">
             <h3><?php echo $nome ?></h3>
             <span>

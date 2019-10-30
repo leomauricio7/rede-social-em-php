@@ -1,24 +1,32 @@
-<div class="card bg-person">
-    <div class="card-body">
-        <ul class="list-unstyled">
-            <?php 
+<section class="companies-info">
+    <div class="container">
+        <div class="company-title">
+            <h3>Usuários</h3>
+        </div>
+        <!--company-title end-->
+        <div class="companies-list">
+            <div class="row">
+                <?php
                 $read = new Read();
-                $read->ExeRead('usuarios' ,'where id <> '.$_SESSION['userId'].'');
-                foreach($read->getResult() as $users):
+                $read->ExeRead('usuarios', 'where id <> ' . $_SESSION['userId'] . '');
+                foreach ($read->getResult() as $users) :
                     extract($users)
-            ?>
-            <li class="media">
-                <img src="<?php echo Url::getBase().'uplouds/users/'.$avatar ?>" class="mr-3" alt="..." width="100px">
-                <div class="media-body">
-                <h5 class="mt-0 mb-1"><?php echo $nome ?></h5>
-                    <strong>Telefone: </strong><?php echo $telefone ?><br>
-                    <strong>E-mail: </strong><?php echo $email ?>
-                    <a class="nav-link" href="./chat/<?php echo $id; ?>"><i class="fas fa-comments"></i> Enviar Mensagem</a>
-                </div>
-            </li>
-            <hr>
-            <?php endforeach ?>
-
-        </ul>
+                    ?>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div class="company_profile_info">
+                            <div class="company-up-info">
+                                <img src="<?php echo $avatar != null ? Url::getBase() . 'uplouds/users/' . $avatar : Url::getBase() . '../public/images/user.png' ?>" alt="<?php echo $avatar ?>" alt="">
+                                <h3><?php echo $nome ?></h3>
+                                <h4><?php echo $telefone ?></h4>
+                                <ul>
+                                    <li><a href="#" title="Chat" class="message-us"><i class="fa fa-comments"></i></a></li>
+                                    <li><a href="#" title="Seguir" class="hire-us"><i class="fa fa-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
     </div>
-</div>
+</section>

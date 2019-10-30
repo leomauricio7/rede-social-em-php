@@ -73,7 +73,10 @@
                         </div>
                     </div>
                     <div class="col-lg-3 pd-right-none no-pd">
-                        <?php include_once('sidbar.php') ?>
+                        <?php 
+                            include_once('portifolio.php');
+                            include_once('sidbar.php');
+                         ?>
                     </div>
                 </div>
             </div>

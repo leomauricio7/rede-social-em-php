@@ -24,7 +24,7 @@ foreach ($posts->getResult() as $post) :
         </div>
       </div>
       <!-- description post -->
-      <img src="<?php echo Url::getBase() . 'uplouds/posts/' . $idPost . '/' . $img ?>" alt="<?php echo $img ?>" alt="" />
+      <img src="<?php echo Url::getBase() . 'uplouds/posts/' . $idPost . '/' . $img ?>" alt="<?php echo $img ?>" />
       <div class="job_descp">
         <p><?php echo $legenda ?></p>
         <ul class="skill-tags">
