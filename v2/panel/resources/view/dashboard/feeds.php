@@ -49,7 +49,7 @@
                         <div class="main-ws-sec">
                             <!-- post feed -->
                             <div class="post-topbar">
-                                <?php if($_SESSION['tipo'] != 'C'): 
+                                <?php 
                                     if ($_POST && ($_POST['typeForm'] == 'cp')):
                                         $addinfo = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                                         $addinfo['id_usuario'] = $_SESSION['userId'];
@@ -93,7 +93,6 @@
                                         </div>
                                     </form>
                                 </div>
-                                <?php endif; ?>
                                 <!--post-st end-->
                             </div>
                             <!-- amigos -->
