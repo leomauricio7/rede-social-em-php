@@ -73,8 +73,8 @@
                                 <h3>Agroverdes</h3>
                                 <span>Projeto de rede social para agricultores</span>
                                 <div class="sign_link">
-                                    <h3><a href="#" title="">GitHub</a></h3>
-                                    <a href="#" title="">Visitar</a>
+                                    <h3><a href="https://github.com/leomauricio7/rede-social-em-php" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></h3>
+                                    <a href="https://github.com/leomauricio7/rede-social-em-php" target="_blank" title="GitHub">Visitar</a>
                                 </div>
                             </div>
                         </div>
