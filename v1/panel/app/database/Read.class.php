@@ -37,7 +37,7 @@ class Read extends Conn{
         if(empty($Termos)):
             $Termos = '';
         endif;
-        $this->Select = "SELECT ch.id, ch.de, us.nome AS para, ch.msg, ch.`status`, ch.created as data FROM chat AS ch  INNER JOIN usuarios AS us ON ch.para = us.id $Termos";
+        $this->Select = "SELECT ch.id, ch.de, ch.para as idPara, us.nome AS para, ch.msg, ch.`status`, ch.created as data FROM chat AS ch  INNER JOIN usuarios AS us ON ch.para = us.id $Termos";
         $this->ExecuteSQL();
     }
 

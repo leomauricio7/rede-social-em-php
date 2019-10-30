@@ -92,11 +92,13 @@
                                             </div>
                                         </div>
                                     </form>
-
                                 </div>
                                 <?php endif; ?>
                                 <!--post-st end-->
                             </div>
+                            <!-- amigos -->
+                            <!-- <?php //include_once('usersAlt.php')?> -->
+                            
                             <!-- posts -->
                             <div class="posts-section">
                                 <?php include_once("posts.php") ?>

@@ -146,6 +146,17 @@ class Validation extends Conn
         endforeach;
         return $name;
     }
+    public static function getImageUser($userId)
+    {
+        $img = null;
+        $read = new Read();
+        $read->ExeRead('usuarios', "where id = $userId");
+        foreach ($read->getResult() as $user) :
+            extract($user);
+            $img = $avatar;
+        endforeach;
+        return $img;
+    }
     public static function verificaSeguidor($id_seguindo)
     {
         $id_user = $_SESSION['userId'];

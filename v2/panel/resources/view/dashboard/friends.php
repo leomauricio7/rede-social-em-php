@@ -20,7 +20,7 @@
                                 <h4><?php echo $email ?></h4>
                                 <h4><?php echo $telefone ?></h4>
                                 <ul>
-                                    <li><a href="#" title="Chat" class="message-us"><i class="fa fa-comments"></i></a></li>
+                                    <li><a href="./chat/<?php echo $id; ?>" title="Chat" class="message-us"><i class="fa fa-comments"></i></a></li>
                                     <?php if (Validation::verificaSeguidor($id)) { ?>
                                         <li><a href="#" title="deixar de Seguir" class="hire-us seguir" alt="<?php echo $id ?>"><i class="fa fa-minus"></i></a></li>
                                     <?php } else { ?>

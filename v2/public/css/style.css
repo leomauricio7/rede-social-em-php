@@ -1938,7 +1938,7 @@ main {
 	margin-right: 15px;
 }
 .post-project-fields form ul li button.active {
-	background-color: #e44d3a;
+	background-color: #28441b;
 	color: #fff;
 }
 .post-project-fields form ul li button,
@@ -4094,7 +4094,7 @@ a:hover {
 .con-title {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: #28441b;
 	padding: 15px 25px;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
@@ -4221,7 +4221,7 @@ a:hover {
 .chat-msg p {
 	color: #ffffff;
 	font-size: 14px;
-	background-color: #e44d3a;
+	background-color: #6bc146;
 	line-height: 18px;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
