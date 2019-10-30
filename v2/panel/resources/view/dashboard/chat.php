@@ -42,7 +42,7 @@
                   ?>
                   <div class="chat-msg <?php echo $de == $_SESSION['userId'] ? 'st2' : '' ?>">
                     <p><?php echo $msg ?></p>
-                    <span><?php echo $data->format('d/m/Y'); ?></span>
+                    <span><?php echo $data->format('d/m/Y g:ia'); ?></span>
                   </div>
                 <?php endforeach; ?>
               </div>
