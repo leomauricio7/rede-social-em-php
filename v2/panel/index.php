@@ -37,9 +37,18 @@ Validation::validaSession();
     </div>
 
     <div class="wrapper">
-        <?php include_once("resources/view/dashboard/header.php") ?>
-    </div>
+        <?php 
+        include_once("resources/view/dashboard/header.php");
+        $pagina = Url::getURL(1);
+        if ($pagina==null) :
+            $pagina="feeds";
+        endif;
+        if (file_exists("resources/view/dashboard/" . $pagina . ".php")) :
+            require_once("resources/view/dashboard/" . $pagina . ".php");
+        endif;
+        ?>
 
+    </div>
     <script type="text/javascript" src="<?php echo Url::getBase(); ?>../public/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo Url::getBase(); ?>../public/js/popper.js"></script>
     <script type="text/javascript" src="<?php echo Url::getBase(); ?>../public/js/bootstrap.min.js"></script>

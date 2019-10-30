@@ -33,6 +33,21 @@ class Read extends Conn{
         $this->ExecuteSQL();
     }
 
+    public function getTotalComentariosPost($idPost) {
+        $this->Select = "SELECT * FROM comentarios WHERE id_post = $idPost";
+        $this->ExecuteSQL();
+    } 
+    
+    public function getTotalPost($idUser) {
+        $this->Select = "SELECT * FROM posts WHERE id_usuario = $idUser";
+        $this->ExecuteSQL();
+    }
+
+    public function getTotalSeguidores($idUser) {
+        $this->Select = "SELECT * FROM seguidores WHERE id_user = $idUser";
+        $this->ExecuteSQL();
+    }
+
     public function getChat($Termos = null) {
         if(empty($Termos)):
             $Termos = '';
@@ -53,7 +68,7 @@ class Read extends Conn{
         if(empty($Termos)):
             $Termos = '';
         endif;
-        $this->Select = "SELECT c.id, c.comentario, p.id AS idPost, u.nome as nomeUserComentario, u.avatar AS avatarUserComentario FROM comentarios AS c INNER JOIN  posts AS p ON c.id_post = p.id INNER JOIN usuarios AS u ON c.id_usuario = u.id $Termos";
+        $this->Select = "SELECT c.id, c.comentario, p.id AS idPost, u.nome as nomeUserComentario, u.avatar AS avatarUserComentario, c.data_created as dataComentario FROM comentarios AS c INNER JOIN  posts AS p ON c.id_post = p.id INNER JOIN usuarios AS u ON c.id_usuario = u.id $Termos";
         $this->ExecuteSQL();
     }  
     
