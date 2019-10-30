@@ -21,9 +21,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html" title="">
+                        <a href="<?php echo Url::getBase() ?>friends" title="">
                         <i class="fa fa-users"></i>
                             Amigos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo Url::getBase() ?>profile" title="">
+                        <i class="fa fa-user"></i>
+                            Perfil
                         </a>
                     </li>
                 </ul>

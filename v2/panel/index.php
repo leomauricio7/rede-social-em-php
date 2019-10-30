@@ -39,7 +39,7 @@ Validation::validaSession();
     <div class="wrapper">
         <?php 
         include_once("resources/view/dashboard/header.php");
-        $pagina = Url::getURL(1);
+        $pagina = Url::getURL(0);
         if ($pagina==null) :
             $pagina="feeds";
         endif;
