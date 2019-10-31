@@ -42,6 +42,7 @@ class Validation extends Conn
             $_SESSION['senha'] = $dados['senha'];
             $_SESSION['tipo'] = $dados['tipo'];
             $_SESSION['avatar'] = $dados['avatar'];
+            $_SESSION['descricao'] = $dados['descricao'];
             $_SESSION['logado'] = true;
             $_SESSION["sessiontime"] = time() + 60 * 00;
             return true;
@@ -86,6 +87,7 @@ class Validation extends Conn
                 unset($_SESSION['user']);
                 unset($_SESSION['userId']);
                 unset($_SESSION['avatar']);
+                unset($_SESSION['descricao']);
 
                 $_SESSION['erro'] =
                     '<div class="alert alert-danger alert-dismissible" role="alert">
@@ -109,6 +111,7 @@ class Validation extends Conn
                 unset($_SESSION['tipo']);
                 unset($_SESSION['userId']);
                 unset($_SESSION['avatar']);
+                unset($_SESSION['descricao']);
                 $_SESSION['erro'] = '<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> Sua sessão expirou!</div>';
                 echo '<script>window.location.href="../../";</script>';
             } else {
@@ -123,6 +126,7 @@ class Validation extends Conn
             unset($_SESSION['tipo']);
             unset($_SESSION['userId']);
             unset($_SESSION['avatar']);
+            unset($_SESSION['descricao']);
             $_SESSION['erro'] = '<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> Sua sessão expirou!</div>';
             echo '<script>window.location.href="../";</script>';
         }
