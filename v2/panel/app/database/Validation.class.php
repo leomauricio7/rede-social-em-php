@@ -44,7 +44,7 @@ class Validation extends Conn
             $_SESSION['avatar'] = $dados['avatar'];
             $_SESSION['descricao'] = $dados['descricao'];
             $_SESSION['logado'] = true;
-            $_SESSION["sessiontime"] = time() + 60 * 00;
+            $_SESSION["sessiontime"] = time() +  60 * 00;
             return true;
         else :
             $_SESSION['erro'] =

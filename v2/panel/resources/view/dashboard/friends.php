@@ -8,7 +8,10 @@
             <div class="row">
                 <?php
                 $read = new Read();
-                $read->ExeRead('usuarios', 'where id <> ' . $_SESSION['userId'] . '');
+                $search = filter_input(INPUT_GET,'search', FILTER_SANITIZE_STRING);
+                $query = 'where id <> ' . $_SESSION['userId'];
+                if($search){ $query = 'WHERE id <> ' . $_SESSION['userId'] . ' AND nome LIKE "%'.$search.'%"';}
+                $read->ExeRead('usuarios', $query);
                 foreach ($read->getResult() as $users) :
                     extract($users)
                     ?>

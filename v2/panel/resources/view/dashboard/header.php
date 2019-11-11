@@ -6,7 +6,7 @@
             </div>
             <!--logo end-->
             <div class="search-bar">
-                <form>
+                <form method="GET" action="<?php echo Url::getBase() ?>friends">
                     <input type="text" name="search" placeholder="Buscar...">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>

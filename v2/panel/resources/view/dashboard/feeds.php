@@ -86,7 +86,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <ul>
-                                                    <li><button class="active" type="submit" value="post">Publciar</button></li>
+                                                    <li><button class="active" type="submit" value="post">Publicar</button></li>
                                                     <li><button type="reset" title="">Cancelar</button></li>
                                                 </ul>
                                             </div>
