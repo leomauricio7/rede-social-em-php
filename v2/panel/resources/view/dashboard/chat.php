@@ -32,7 +32,10 @@
               foreach ($historico as $ar) {
                 $irma[] = $ar['data'];
               }
-              array_multisort($irma, $historico);
+              // verifica se o array possui algum valor
+              if(count($historico) > 0){
+                array_multisort($irma, $historico);
+              }
               ?>
               <!-- mesnsagens -->
               <div id="mCSB_2_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
