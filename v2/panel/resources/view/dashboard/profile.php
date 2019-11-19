@@ -49,6 +49,7 @@
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
+                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
                                 </div>
                                 <!--star-descp end-->

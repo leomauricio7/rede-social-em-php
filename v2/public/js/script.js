@@ -27,6 +27,52 @@ $(window).on("load", function () {
         });
     });
 
+    $('a.btn-avaliar').click(function (e) {
+        e.preventDefault();
+        let id_user_avaliado = $(this).attr('alt');
+        console.log(id_user_avaliado);
+    });
+
+    // avaliação
+    $('.vote label i.fa').on('click', function () {
+        // pegar o valor do input da estrela clicada
+        var val = $(this).prev('input').val();
+        var id = $(this).prev('input').attr('alt');
+        // remove classe ativa de todas as estrelas
+        $('#vote-box-' + id + ' label i.fa').removeClass('active');
+        //percorrer todas as estrelas
+        $('#vote-box-' + id + ' label i.fa').each(function () {
+            /* checar de o valor clicado é menor ou igual do input atual
+            *  se sim, adicionar classe active
+            */
+            var $input = $(this).prev('input');
+            if ($input.val() <= val) {
+                $(this).addClass('active');
+            }
+        });
+        console.log(val, id)
+        avaliar({val, id});
+    });
+
+    const avaliar = (data) => {
+        $('.loading').show();
+        event.preventDefault();
+        $.ajax({
+            url: "app/helpers/avaliar.php",
+            type: "POST",
+            data: data,
+            dataType: "json"
+        }).done(function (resposta) {
+            console.log(resposta)
+        }).fail(function (jqXHR, textStatus) {
+            console.error("Request failed: " + textStatus);
+        }).always(function () {
+            $('.loading').hide();
+            console.log("finish");
+        });
+    }
+    //===========================================//
+
     $('#formUserVendedor').submit((event) => {
         $('.loading').show();
         event.preventDefault();

@@ -172,4 +172,17 @@ class Validation extends Conn
             return false;
         }
     }
+
+    public static function getAvalicao($idAvaliado)
+    {
+        $id_user = $_SESSION['userId'];
+        $read = new Read();
+        $read->ExeRead('avaliacao', 'WHERE id_user_avaliado=:avaliado AND id_user_avaliador=:avaliador', 'avaliado=' . $idAvaliado . '&avaliador=' . $id_user);
+        if ($read->getRowCount() > 0) {
+            $data = $read->getResult()[0];
+            return $data['pontuacao'];
+        } else {
+            return 0;
+        }
+    }
 }

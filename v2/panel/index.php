@@ -27,6 +27,8 @@ Validation::validaSession();
     <link rel="stylesheet" type="text/css" href="<?php echo Url::getBase(); ?>../public/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo Url::getBase(); ?>../public/css/loading.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 </head>
 
 <body oncontextmenu="return false;">
